@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-Barriecito: 'Barriecito', sans-serif;
+  --font-Pacifico: 'Pacifico', sans-serif;
+}
+
+@layer base {
+  label {
+    font-family: var(--font-Barriecito);
+  }
+  input {
+    font-family: var(--font-Pacifico);
+  }
+}
+
+body {
+  @apply bg-white;
+}
