@@ -4,3 +4,10 @@ export type NewCategoryProps = {
   addNewCategory: () => void;
   setShowAddCategory: (value: boolean) => void;
 };
+
+export type ButtonProps = {
+  onClick?: () => void;
+  label: string;
+  disabled?: boolean;
+  styles?: string;
+};

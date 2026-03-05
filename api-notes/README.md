@@ -9,10 +9,9 @@ Backend implementation coming soon.
 ## Tech Stack
 
 TBD - Consider:
+
 - Node.js (Express/Fastify)
 - Python (FastAPI/Flask)
-- Go
-- Java (Spring Boot)
 
 ## Features (Planned)
 

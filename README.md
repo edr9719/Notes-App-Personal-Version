@@ -1,4 +1,4 @@
-# Notes App - Fullstack
+# WindowsXP Notes App - Fullstack
 
 A fullstack notes application built as a learning project with microservices architecture.
 

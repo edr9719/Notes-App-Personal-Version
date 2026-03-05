@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import NewCategory from './NewCategory';
+import Button from './Button';
 
 const NoteForm = () => {
   const [title, setTitle] = useState('');
@@ -20,8 +21,15 @@ const NoteForm = () => {
     setShowAddCategory(false);
   };
 
+  let formInputs = true;
+
+  if (!title && !description) {
+    formInputs = false;
+  }
+
   return (
-    <form className='mt-10 text-center'>
+    <form className='mt-2 text-center'>
+      {/*_____Title_______*/}
       <label htmlFor='title' className='text-4xl text-green-600'>
         Title
       </label>
@@ -32,6 +40,8 @@ const NoteForm = () => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
+      {/*_____Category_______*/}
+
       <div className='flex items-center justify-center relative'>
         <label htmlFor='category' className='text-4xl text-green-600 mr-5'>
           Category
@@ -41,10 +51,9 @@ const NoteForm = () => {
           src='./public/plus.svg'
           alt='Add Note'
           width={'40px'}
-          className='rounded-sm absolute right-8 cursor-pointer hover:shadow-[5px_5px_15px_5px_#915523]'
+          className='rounded-sm absolute right-8 cursor-pointer hover:scale-130'
         />
       </div>
-
       <select
         value={category}
         onChange={(e) => setCategory(e.target.value)}
@@ -59,10 +68,10 @@ const NoteForm = () => {
         ))}
       </select>
 
+      {/*_____Priority_______*/}
       <label htmlFor='priority' className='text-4xl text-green-600 mr-5'>
         Priority
       </label>
-
       <select
         value={priority}
         onChange={(e) => setPriority(e.target.value)}
@@ -74,6 +83,31 @@ const NoteForm = () => {
         <option value='medium'>Medium</option>
         <option value='high'>High</option>
       </select>
+
+      {/*_____Description_______*/}
+
+      <label htmlFor='description' className='text-4xl text-green-600'>
+        Description
+      </label>
+      <textarea
+        id='description'
+        className='w-full border border-gray-300 rounded mt-1 h-25 bg-white mb-5'
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
+
+      {/*_____Buttons_______*/}
+      <div className='flex items-center justify-center gap-5 mt-5'>
+        <Button label='See notes' styles='bg-royal-blue text-white w-full' />
+        <Button
+          label='Add note'
+          disabled={formInputs ? false : true}
+          styles={`${!formInputs ? 'cursor-pointer' : 'cursor-not-allowed'} bg-green-600 text-royal-blue w-full`}
+        />
+      </div>
+
+      {/*_____Add Category_______*/}
+
       {showAddCategory && (
         <NewCategory
           newCategory={newCategory}

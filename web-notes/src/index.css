@@ -5,6 +5,7 @@
 @theme {
   --font-Barriecito: 'Barriecito', sans-serif;
   --font-Pacifico: 'Pacifico', sans-serif;
+  --color-royal-blue: #0130cb;
 }
 
 @layer base {
@@ -14,8 +15,16 @@
   input {
     font-family: var(--font-Pacifico);
   }
+  textarea {
+    font-family: var(--font-Pacifico);
+  }
 }
 
 body {
   @apply bg-white;
+  background-image: url('960915.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
